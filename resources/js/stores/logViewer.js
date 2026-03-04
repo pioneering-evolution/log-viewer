@@ -28,8 +28,8 @@ export const useLogViewerStore = defineStore({
 
   state: () => ({
     theme: shouldUseLocalStorage
-      ? useLocalStorage('logViewerTheme', window.LogViewer?.defaults?.theme || Theme.Light)
-      : (window.LogViewer?.defaults?.theme || Theme.Light),
+      ? useLocalStorage('logViewerTheme', window.LogViewer?.defaults?.theme || Theme.System)
+      : (window.LogViewer?.defaults?.theme || Theme.System),
     shorterStackTraces: shouldUseLocalStorage
       ? useLocalStorage('logViewerShorterStackTraces', window.LogViewer?.defaults?.shorter_stack_traces ?? false)
       : (window.LogViewer?.defaults?.shorter_stack_traces ?? false),

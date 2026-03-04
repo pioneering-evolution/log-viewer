@@ -287,7 +287,7 @@ return [
         // Number of results per page. Must be one of the above `per_page_options` values
         'per_page' => 25,
 
-        'theme' => Theme::Light,
+        'theme' => Theme::System,
 
         // Whether to enable `Shorter Stack Traces` option by default
         'shorter_stack_traces' => false,

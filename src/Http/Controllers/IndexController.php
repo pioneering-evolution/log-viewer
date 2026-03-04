@@ -39,7 +39,7 @@ class IndexController
                     'use_local_storage' => config('log-viewer.defaults.use_local_storage'),
                     'log_sorting_order' => config('log-viewer.defaults.log_sorting_order'),
                     'per_page' => config('log-viewer.defaults.per_page'),
-                    'theme' => 'Light',
+                    'theme' => config('log-viewer.defaults.theme'),
                     'shorter_stack_traces' => config('log-viewer.defaults.shorter_stack_traces'),
                 ],
                 'root_folder_prefix' => LogFolder::rootPrefix(),
