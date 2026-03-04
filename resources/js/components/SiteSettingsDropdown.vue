@@ -91,17 +91,6 @@
             </a>
           </MenuItem>
 
-          <div class="divider"></div>
-
-          <MenuItem v-slot="{ active }">
-            <a href="https://www.buymeacoffee.com/arunas" target="_blank" :class="[active ? 'active' : '']">
-              <div class="w-4 h-4 mr-3 flex flex-col items-center">
-                <bmc-icon class="h-4 w-auto" />
-              </div>
-              <strong :class="[active ? 'text-white' : 'text-brand-500']">Show your support</strong>
-              <ArrowTopRightOnSquareIcon class="ml-2 w-4 h-4 opacity-75" />
-            </a>
-          </MenuItem>
         </div>
       </MenuItems>
     </transition>
@@ -112,7 +101,6 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import {
-  ArrowTopRightOnSquareIcon,
   CircleStackIcon,
   Cog8ToothIcon,
   ComputerDesktopIcon,
@@ -126,7 +114,6 @@ import { ref, watch } from 'vue';
 import Checkmark from './Checkmark.vue';
 import SpinnerIcon from './SpinnerIcon.vue';
 import { copyToClipboard } from '../helpers.js';
-import BmcIcon from './BmcIcon.vue';
 import { useFileStore } from '../stores/files.js';
 
 const logViewerStore = useLogViewerStore();

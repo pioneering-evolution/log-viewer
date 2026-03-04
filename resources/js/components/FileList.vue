@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex flex-col h-full py-5">
+  <nav class="h-full overflow-y-auto py-5" @scroll="(event) => fileStore.onScroll(event)">
     <div class="mx-3 md:mx-0 mb-1">
       <div class="sm:flex sm:flex-col-reverse">
         <h1 class="font-semibold text-brand-700 dark:text-brand-600 text-2xl flex items-center">
@@ -78,8 +78,8 @@
       </div>
     </div>
 
-    <div id="file-list-container" class="relative h-full overflow-hidden">
-      <div class="file-list" @scroll="(event) => fileStore.onScroll(event)">
+    <div id="file-list-container" class="relative">
+      <div class="file-list">
         <div v-for="folder in fileStore.filteredFolders"
              :key="folder.identifier"
              :id="`folder-${folder.identifier}`"
@@ -182,11 +182,8 @@
         </div>
       </div>
 
-      <!-- gradient to hide the bottom of the file list -->
-      <div class="pointer-events-none absolute z-10 bottom-0 h-4 w-full bg-gradient-to-t from-gray-100 dark:from-gray-900 to-transparent"></div>
-
       <!-- loading state overlay -->
-      <div class="absolute inset-y-0 left-3 right-7 lg:left-0 lg:right-0 z-10" v-show="fileStore.loading">
+      <div class="absolute inset-0 z-10" v-show="fileStore.loading">
         <div class="rounded-md bg-white text-gray-800 dark:bg-gray-700 dark:text-gray-200 opacity-90 w-full h-full flex items-center justify-center">
           <SpinnerIcon class="w-14 h-14" />
         </div>

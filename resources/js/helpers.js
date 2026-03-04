@@ -78,7 +78,6 @@ export const useDropdownDirection = () => {
   const dropdownDirections = ref({});
 
   const getDropdownDirection = (buttonElement) => {
-    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const boundingRect = buttonElement.getBoundingClientRect();
 

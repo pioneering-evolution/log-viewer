@@ -10,18 +10,11 @@
   </div>
 
   <div class="absolute bottom-4 right-4 flex items-center">
-    <p class="text-xs text-gray-500 dark:text-gray-400 mr-5 -mb-0.5">
-      <template v-if="logViewerStore.performance?.requestTime">
-        <span><span class="hidden md:inline">Memory: </span><span class="font-semibold">{{ logViewerStore.performance.memoryUsage }}</span></span>
-        <span class="mx-1.5">&middot;</span>
-        <span><span class="hidden md:inline">Duration: </span><span class="font-semibold">{{ logViewerStore.performance.requestTime }}</span></span>
-        <span class="mx-1.5">&middot;</span>
-      </template>
-      <span><span class="hidden md:inline">Version: </span><span class="font-semibold">{{ LogViewer.version }}</span></span>
+    <p class="text-xs text-gray-500 dark:text-gray-400 -mb-0.5" v-if="logViewerStore.performance?.requestTime">
+      <span><span class="hidden md:inline">Memory: </span><span class="font-semibold">{{ logViewerStore.performance.memoryUsage }}</span></span>
+      <span class="mx-1.5">&middot;</span>
+      <span><span class="hidden md:inline">Duration: </span><span class="font-semibold">{{ logViewerStore.performance.requestTime }}</span></span>
     </p>
-    <a href="https://www.buymeacoffee.com/arunas" target="_blank" v-if="LogViewer.show_support_link">
-      <bmc-logo class="h-6 w-auto" title="Support me by buying me a cup of coffee ❤️" />
-    </a>
   </div>
 
   <keyboard-shortcuts-overlay />
@@ -37,7 +30,6 @@ import { useSearchStore } from '../stores/search.js';
 import { usePaginationStore } from '../stores/pagination.js';
 import { useRoute, useRouter } from 'vue-router';
 import { onBeforeMount, onBeforeUnmount, onMounted, watch } from 'vue';
-import BmcLogo from '../components/BmcLogo.vue';
 import { replaceQuery } from '../helpers.js';
 import { registerGlobalShortcuts, unregisterGlobalShortcuts } from '../keyboardNavigation';
 import KeyboardShortcutsOverlay from '../components/KeyboardShortcutsOverlay.vue';
